@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Using data, step 3: change the initial view (UBC, North America)</title>
+  <link href="https://cdn.jsdelivr.net/npm/maplibre-gl@5.24.0/dist/maplibre-gl.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/maplibre-gl@5.24.0/dist/maplibre-gl.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.11.13/lib/p5.min.js"></script>
+  <style>
+    body { margin: 0; }
+    #map { position: absolute; inset: 0; }
+    #map canvas.p5Canvas { position: absolute; top: 0; left: 0; pointer-events: none; z-index: 1; }
+  </style>
+</head>
+<body>
+<div id="map"></div>
+<script>
+const myMap = new maplibregl.Map({
+  container: 'map',
+  center: [-123.25, 49.26],   // [longitude, latitude]: focused on UBC ...
+  zoom: 2.5,                  // ... at a zoom where most of North America is in view
+  style: 'https://tiles.openfreemap.org/styles/liberty'
+});
+myMap.addControl(new maplibregl.NavigationControl());
+
+function latLngToPixel(lat, lng) { return myMap.project([lng, lat]); }
+function pixelToLatLng(x, y)     { const ll = myMap.unproject([x, y]); return { lat: ll.lat, lng: ll.lng }; }
+
+let meteorites;
+
+function preload() {
+  meteorites = loadTable('Meteorite_Landings.csv', 'csv', 'header');
+}
+
+function setup() {
+  const canvas = createCanvas(windowWidth, windowHeight);
+  canvas.parent('map');
+  myMap.on('move', () => redraw());
+  noLoop();
+ 
+}
+
+function draw() {
+  clear();
+  const bounds = myMap.getBounds();
+  for (let i = 0; i < meteorites.getRowCount(); i++) {
+    const lat = meteorites.getNum(i, 'reclat');
+    const lng = meteorites.getNum(i, 'reclong');
+    if (bounds.contains([lng, lat])) {
+      const pos = latLngToPixel(lat, lng);
+      let size = meteorites.getNum(i, 'mass (g)');
+      size = map(size, 558, 60000000, 1, 25) + myMap.getZoom();
+      if (meteorites.getString(i, 'fall') === 'Fell') {
+  fill(255, 120, 0, 230);   // orange: seen falling
+} else {
+  fill(200, 0, 120, 200);   // magenta: found later
+}
+stroke(30);
+strokeWeight(1.5);
+      ellipse(pos.x, pos.y, size, size);
+    }
+  }
+}
+
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
+  redraw();
+}
+</script>
+</body>
+</html>
