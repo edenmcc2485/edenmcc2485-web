@@ -1,0 +1,545 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.856111,
+          40.325833
+        ]
+      },
+      "properties": {
+        "monitoring_location_id": "USGS-09010500",
+        "parameter_code": "00060",
+        "parent_time_series_id": "90ea485a4306489aa5533caafb0e43f2",
+        "parent_statistic_id": "00003",
+        "parent_statistic_name": "Mean",
+        "start_date": "2025-10-01",
+        "end_date": "2026-02-25",
+        "interval_type": "water_year",
+        "monitoring_location_name": "COLORADO RIVER BELOW BAKER GULCH NR GRAND LAKE, CO",
+        "site_type": "Stream",
+        "site_type_code": "ST",
+        "country_code": "US",
+        "state_code": "08",
+        "county_code": "049",
+        "unit_of_measure": "ft^3/s",
+        "maximum": 22.5,
+        "maximum_sample_count": 148,
+        "approval_status": "approved"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.439444,
+          40.036667
+        ]
+      },
+      "properties": {
+        "monitoring_location_id": "USGS-09058000",
+        "parameter_code": "00060",
+        "parent_time_series_id": "09e6702b64904dc1832a5c927f2c904a",
+        "parent_statistic_id": "00003",
+        "parent_statistic_name": "Mean",
+        "start_date": "2025-10-01",
+        "end_date": "2026-04-07",
+        "interval_type": "water_year",
+        "monitoring_location_name": "COLORADO RIVER NEAR KREMMLING, CO",
+        "site_type": "Stream",
+        "site_type_code": "ST",
+        "country_code": "US",
+        "state_code": "08",
+        "county_code": "049",
+        "unit_of_measure": "ft^3/s",
+        "maximum": 1070.0,
+        "maximum_sample_count": 189,
+        "approval_status": "approved"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.83169444,
+          39.8911
+        ]
+      },
+      "properties": {
+        "monitoring_location_id": "USGS-09060799",
+        "parameter_code": "00060",
+        "parent_time_series_id": "d6de2ce4fb9f4f23aa934406fe0061c1",
+        "parent_statistic_id": "00003",
+        "parent_statistic_name": "Mean",
+        "start_date": "2025-10-01",
+        "end_date": "2026-08-11",
+        "interval_type": "water_year",
+        "monitoring_location_name": "COLORADO RIVER AT CATAMOUNT BRIDGE, CO",
+        "site_type": "Stream",
+        "site_type_code": "ST",
+        "country_code": "US",
+        "state_code": "08",
+        "county_code": "037",
+        "unit_of_measure": "ft^3/s",
+        "maximum": 1240.0,
+        "maximum_sample_count": 196,
+        "approval_status": "approved"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -107.33755398,
+          39.55498191
+        ]
+      },
+      "properties": {
+        "monitoring_location_id": "USGS-09085100",
+        "parameter_code": "00060",
+        "parent_time_series_id": "7c11d3dac3434317aedd189124b60851",
+        "parent_statistic_id": "00003",
+        "parent_statistic_name": "Mean",
+        "start_date": "2025-10-01",
+        "end_date": "2026-07-13",
+        "interval_type": "water_year",
+        "monitoring_location_name": "COLORADO RIVER BELOW GLENWOOD SPRINGS, CO",
+        "site_type": "Stream",
+        "site_type_code": "ST",
+        "country_code": "US",
+        "state_code": "08",
+        "county_code": "045",
+        "unit_of_measure": "ft^3/s",
+        "maximum": 3200.0,
+        "maximum_sample_count": 286,
+        "approval_status": "approved"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -108.26619458,
+          39.23914631
+        ]
+      },
+      "properties": {
+        "monitoring_location_id": "USGS-09095500",
+        "parameter_code": "00060",
+        "parent_time_series_id": "64a380e875374855986e50d0fc75a126",
+        "parent_statistic_id": "00003",
+        "parent_statistic_name": "Mean",
+        "start_date": "2025-10-01",
+        "end_date": "2026-03-26",
+        "interval_type": "water_year",
+        "monitoring_location_name": "COLORADO RIVER NEAR CAMEO, CO.",
+        "site_type": "Stream",
+        "site_type_code": "ST",
+        "country_code": "US",
+        "state_code": "08",
+        "county_code": "077",
+        "unit_of_measure": "ft^3/s",
+        "maximum": 2570.0,
+        "maximum_sample_count": 177,
+        "approval_status": "approved"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -108.54111111,
+          39.05458333
+        ]
+      },
+      "properties": {
+        "monitoring_location_id": "USGS-09106485",
+        "parameter_code": "00060",
+        "parent_time_series_id": "9fd02bba79174182b17edf79151b0174",
+        "parent_statistic_id": "00003",
+        "parent_statistic_name": "Mean",
+        "start_date": "2025-10-01",
+        "end_date": "2026-01-05",
+        "interval_type": "water_year",
+        "monitoring_location_name": "COLORADO R. ABV GUNNISON R. AT GRAND JUNCTION, CO",
+        "site_type": "Stream",
+        "site_type_code": "ST",
+        "country_code": "US",
+        "state_code": "08",
+        "county_code": "077",
+        "unit_of_measure": "ft^3/s",
+        "maximum": 1950.0,
+        "maximum_sample_count": 97,
+        "approval_status": "approved"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -109.02707585,
+          39.1327434
+        ]
+      },
+      "properties": {
+        "monitoring_location_id": "USGS-09163500",
+        "parameter_code": "00060",
+        "parent_time_series_id": "4765a85695334135a1313f8c0f792f23",
+        "parent_statistic_id": "00003",
+        "parent_statistic_name": "Mean",
+        "start_date": "2025-10-01",
+        "end_date": "2026-03-03",
+        "interval_type": "water_year",
+        "monitoring_location_name": "COLORADO RIVER NEAR COLORADO-UTAH STATE LINE",
+        "site_type": "Stream",
+        "site_type_code": "ST",
+        "country_code": "US",
+        "state_code": "08",
+        "county_code": "077",
+        "unit_of_measure": "ft^3/s",
+        "maximum": 5080.0,
+        "maximum_sample_count": 154,
+        "approval_status": "approved"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -109.29344933,
+          38.81054095
+        ]
+      },
+      "properties": {
+        "monitoring_location_id": "USGS-09180500",
+        "parameter_code": "00060",
+        "parent_time_series_id": "7b4a68e1bca9411c935fa4c53504ddf2",
+        "parent_statistic_id": "00003",
+        "parent_statistic_name": "Mean",
+        "start_date": "2025-10-01",
+        "end_date": "2026-06-01",
+        "interval_type": "water_year",
+        "monitoring_location_name": "COLORADO RIVER NEAR CISCO, UT",
+        "site_type": "Stream",
+        "site_type_code": "ST",
+        "country_code": "US",
+        "state_code": "49",
+        "county_code": "019",
+        "unit_of_measure": "ft^3/s",
+        "maximum": 6510.0,
+        "maximum_sample_count": 244,
+        "approval_status": "approved"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -109.65833333,
+          38.50472222
+        ]
+      },
+      "properties": {
+        "monitoring_location_id": "USGS-09185600",
+        "parameter_code": "00060",
+        "parent_time_series_id": "85f43b48ce3a4822afc2e1aa785f46c2",
+        "parent_statistic_id": "00003",
+        "parent_statistic_name": "Mean",
+        "start_date": "2025-10-01",
+        "end_date": "2026-09-22",
+        "interval_type": "water_year",
+        "monitoring_location_name": "COLORADO RIVER AT POTASH, UT",
+        "site_type": "Stream",
+        "site_type_code": "ST",
+        "country_code": "US",
+        "state_code": "49",
+        "county_code": "019",
+        "unit_of_measure": "ft^3/s",
+        "maximum": 6550.0,
+        "maximum_sample_count": 357,
+        "approval_status": "approved"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.07353889,
+          38.01001944
+        ]
+      },
+      "properties": {
+        "monitoring_location_id": "USGS-09328960",
+        "parameter_code": "00060",
+        "parent_time_series_id": "74f0fc7321b94fce9d936fe2f6616e72",
+        "parent_statistic_id": "00003",
+        "parent_statistic_name": "Mean",
+        "start_date": "2025-10-01",
+        "end_date": "2026-06-08",
+        "interval_type": "water_year",
+        "monitoring_location_name": "COLORADO RIVER AT GYPSUM CANYON NEAR HITE, UT",
+        "site_type": "Stream",
+        "site_type_code": "ST",
+        "country_code": "US",
+        "state_code": "49",
+        "county_code": "037",
+        "unit_of_measure": "ft^3/s",
+        "maximum": 12600.0,
+        "maximum_sample_count": 251,
+        "approval_status": "approved"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.58787222,
+          36.86433333
+        ]
+      },
+      "properties": {
+        "monitoring_location_id": "USGS-09380000",
+        "parameter_code": "00060",
+        "parent_time_series_id": "925d13501026437bb82f4d02caf7222b",
+        "parent_statistic_id": "00003",
+        "parent_statistic_name": "Mean",
+        "start_date": "2025-10-01",
+        "end_date": "2026-06-17",
+        "interval_type": "water_year",
+        "monitoring_location_name": "COLORADO RIVER AT LEES FERRY, AZ",
+        "site_type": "Stream",
+        "site_type_code": "ST",
+        "country_code": "US",
+        "state_code": "04",
+        "county_code": "005",
+        "unit_of_measure": "ft^3/s",
+        "maximum": 10500.0,
+        "maximum_sample_count": 260,
+        "approval_status": "approved"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.08627949,
+          36.10137176
+        ]
+      },
+      "properties": {
+        "monitoring_location_id": "USGS-09402500",
+        "parameter_code": "00060",
+        "parent_time_series_id": "9173a72e5fee42a287bdd54a6b70e6d4",
+        "parent_statistic_id": "00003",
+        "parent_statistic_name": "Mean",
+        "start_date": "2025-10-01",
+        "end_date": "2026-02-17",
+        "interval_type": "water_year",
+        "monitoring_location_name": "COLORADO RIVER NEAR GRAND CANYON, AZ",
+        "site_type": "Stream",
+        "site_type_code": "ST",
+        "country_code": "US",
+        "state_code": "04",
+        "county_code": "005",
+        "unit_of_measure": "ft^3/s",
+        "maximum": 10900.0,
+        "maximum_sample_count": 140,
+        "approval_status": "approved"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.36354396,
+          35.77359943
+        ]
+      },
+      "properties": {
+        "monitoring_location_id": "USGS-09404200",
+        "parameter_code": "00060",
+        "parent_time_series_id": "9fb1af8ccc07498eade932f2f5df74c1",
+        "parent_statistic_id": "00003",
+        "parent_statistic_name": "Mean",
+        "start_date": "2025-10-01",
+        "end_date": "2026-02-24",
+        "interval_type": "water_year",
+        "monitoring_location_name": "COLORADO RVR ABV DIAMOND CREEK NR PEACH SPRINGS AZ",
+        "site_type": "Stream",
+        "site_type_code": "ST",
+        "country_code": "US",
+        "state_code": "04",
+        "county_code": "015",
+        "unit_of_measure": "ft^3/s",
+        "maximum": 11400.0,
+        "maximum_sample_count": 147,
+        "approval_status": "approved"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.36826635,
+          35.76498839
+        ]
+      },
+      "properties": {
+        "monitoring_location_id": "USGS-09404208",
+        "parameter_code": "00060",
+        "parent_time_series_id": "ff3d1b3773994a6785ac08f2db66456b",
+        "parent_statistic_id": "00003",
+        "parent_statistic_name": "Mean",
+        "start_date": "2025-10-01",
+        "end_date": "2026-05-25",
+        "interval_type": "water_year",
+        "monitoring_location_name": "DIAMOND CREEK NEAR PEACH SPRINGS, AZ",
+        "site_type": "Stream",
+        "site_type_code": "ST",
+        "country_code": "US",
+        "state_code": "04",
+        "county_code": "015",
+        "unit_of_measure": "ft^3/s",
+        "maximum": 4.29,
+        "maximum_sample_count": 237,
+        "approval_status": "approved"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.65535,
+          35.7999
+        ]
+      },
+      "properties": {
+        "monitoring_location_id": "USGS-09404222",
+        "parameter_code": "00060",
+        "parent_time_series_id": "a4f0e9d10b6f4dba931067146b7ae34c",
+        "parent_statistic_id": "00003",
+        "parent_statistic_name": "Mean",
+        "start_date": "2025-10-01",
+        "end_date": "2026-02-24",
+        "interval_type": "water_year",
+        "monitoring_location_name": "SPENCER CREEK NEAR PEACH SPRINGS, AZ",
+        "site_type": "Stream",
+        "site_type_code": "ST",
+        "country_code": "US",
+        "state_code": "04",
+        "county_code": "015",
+        "unit_of_measure": "ft^3/s",
+        "maximum": 1.42,
+        "maximum_sample_count": 147,
+        "approval_status": "approved"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.49753889,
+          33.71913611
+        ]
+      },
+      "properties": {
+        "monitoring_location_id": "USGS-09429100",
+        "parameter_code": "00060",
+        "parent_time_series_id": "03e4a517b090406a9198a40a4fe228c2",
+        "parent_statistic_id": "00003",
+        "parent_statistic_name": "Mean",
+        "start_date": "2025-10-01",
+        "end_date": "2026-09-16",
+        "interval_type": "water_year",
+        "monitoring_location_name": "COLORADO RIVER BELOW PALO VERDE DAM, AZ-CA",
+        "site_type": "Stream",
+        "site_type_code": "ST",
+        "country_code": "US",
+        "state_code": "06",
+        "county_code": "065",
+        "unit_of_measure": "ft^3/s",
+        "maximum": 11500.0,
+        "maximum_sample_count": 351,
+        "approval_status": "approved"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.47211111,
+          32.86758333
+        ]
+      },
+      "properties": {
+        "monitoring_location_id": "USGS-09429500",
+        "parameter_code": "00060",
+        "parent_time_series_id": "847cd49a06354877a510ec0e2b2b20fa",
+        "parent_statistic_id": "00003",
+        "parent_statistic_name": "Mean",
+        "start_date": "2025-10-01",
+        "end_date": "2026-09-30",
+        "interval_type": "water_year",
+        "monitoring_location_name": "COLORADO RIVER BELOW IMPERIAL DAM, AZ-CA",
+        "site_type": "Stream",
+        "site_type_code": "ST",
+        "country_code": "US",
+        "state_code": "06",
+        "county_code": "025",
+        "unit_of_measure": "ft^3/s",
+        "maximum": 2200.0,
+        "maximum_sample_count": 365,
+        "approval_status": "approved"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.47211111,
+          32.86758333
+        ]
+      },
+      "properties": {
+        "monitoring_location_id": "USGS-09429500",
+        "parameter_code": "00060",
+        "parent_time_series_id": "847cd49a06354877a510ec0e2b2b20fa",
+        "parent_statistic_id": "00003",
+        "parent_statistic_name": "Mean",
+        "start_date": "2026-10-01",
+        "end_date": "2026-10-01",
+        "interval_type": "water_year",
+        "monitoring_location_name": "COLORADO RIVER BELOW IMPERIAL DAM, AZ-CA",
+        "site_type": "Stream",
+        "site_type_code": "ST",
+        "country_code": "US",
+        "state_code": "06",
+        "county_code": "025",
+        "unit_of_measure": "ft^3/s",
+        "maximum": 495.0,
+        "maximum_sample_count": 1,
+        "approval_status": "approved"
+      }
+    }
+  ]
+}
