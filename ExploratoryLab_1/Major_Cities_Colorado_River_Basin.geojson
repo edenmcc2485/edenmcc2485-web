@@ -1,0 +1,572 @@
+{
+ "type": "FeatureCollection",
+ "name": "Major_Cities_that_Use_Colorado_River_Water_Basin_Flag",
+ "crs": {
+  "type": "name",
+  "properties": {
+   "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+  }
+ },
+ "features": [
+  {
+   "type": "Feature",
+   "properties": {
+    "FID": 1,
+    "GNIS_ID": 1609077,
+    "ANSICODE": "2409445",
+    "NAME": "Cheyenne",
+    "FEATURE_TYPE": "City",
+    "POP_2010": 59466,
+    "COUNTY": "Laramie",
+    "COUNTYFIPS": "021",
+    "STATE": "WY",
+    "STATE_FIPS": "56",
+    "LATITUDE": 41.1399814,
+    "LONGITUDE": -104.8202462,
+    "ELEV_IN_FT": 6086,
+    "IN_COLORADO_RIVER_BASIN": "No",
+    "HYDROLOGIC_BASIN": "North Platte/South Platte (Missouri basin)",
+    "COLORADO_RIVER_WATER_SOURCE": "Transbasin diversion (Hoosier/Stage II)"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -104.820242320989,
+     41.139975546552
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FID": 2,
+    "GNIS_ID": 178680,
+    "ANSICODE": "2409883",
+    "NAME": "Boulder",
+    "FEATURE_TYPE": "City",
+    "POP_2010": 97385,
+    "COUNTY": "Boulder",
+    "COUNTYFIPS": "013",
+    "STATE": "CO",
+    "STATE_FIPS": "08",
+    "LATITUDE": 40.0149856,
+    "LONGITUDE": -105.2705456,
+    "ELEV_IN_FT": 5328,
+    "IN_COLORADO_RIVER_BASIN": "No",
+    "HYDROLOGIC_BASIN": "South Platte (Missouri basin)",
+    "COLORADO_RIVER_WATER_SOURCE": "Colorado-Big Thompson Project transbasin diversion"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -105.270540823459,
+     40.0149774466973
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FID": 3,
+    "GNIS_ID": 201738,
+    "ANSICODE": "2410324",
+    "NAME": "Denver",
+    "FEATURE_TYPE": "City",
+    "POP_2010": 600158,
+    "COUNTY": "Denver",
+    "COUNTYFIPS": "031",
+    "STATE": "CO",
+    "STATE_FIPS": "08",
+    "LATITUDE": 39.7391536,
+    "LONGITUDE": -104.9847034,
+    "ELEV_IN_FT": 5279,
+    "IN_COLORADO_RIVER_BASIN": "No",
+    "HYDROLOGIC_BASIN": "South Platte (Missouri basin)",
+    "COLORADO_RIVER_WATER_SOURCE": "Transbasin diversions (Moffat, Roberts, C-BT)"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -104.984696900052,
+     39.7391475288188
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FID": 4,
+    "GNIS_ID": 204797,
+    "ANSICODE": "2410198",
+    "NAME": "Colorado Springs",
+    "FEATURE_TYPE": "City",
+    "POP_2010": 416427,
+    "COUNTY": "El Paso",
+    "COUNTYFIPS": "041",
+    "STATE": "CO",
+    "STATE_FIPS": "08",
+    "LATITUDE": 38.8338816,
+    "LONGITUDE": -104.8213634,
+    "ELEV_IN_FT": 6010,
+    "IN_COLORADO_RIVER_BASIN": "No",
+    "HYDROLOGIC_BASIN": "Arkansas (Missouri basin)",
+    "COLORADO_RIVER_WATER_SOURCE": "Transbasin diversions (Homestake, Blue River, Fry-Ark)"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -104.821356231941,
+     38.8338788468045
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FID": 5,
+    "GNIS_ID": 928679,
+    "ANSICODE": "2409678",
+    "NAME": "Albuquerque",
+    "FEATURE_TYPE": "City",
+    "POP_2010": 545852,
+    "COUNTY": "Bernalillo",
+    "COUNTYFIPS": "001",
+    "STATE": "NM",
+    "STATE_FIPS": "35",
+    "LATITUDE": 35.0844909,
+    "LONGITUDE": -106.6511367,
+    "ELEV_IN_FT": 4954,
+    "IN_COLORADO_RIVER_BASIN": "No",
+    "HYDROLOGIC_BASIN": "Rio Grande",
+    "COLORADO_RIVER_WATER_SOURCE": "San Juan-Chama Project transbasin diversion"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -106.651125651011,
+     35.0844831371498
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FID": 6,
+    "GNIS_ID": 204673,
+    "ANSICODE": "2410526",
+    "NAME": "Fort Collins",
+    "FEATURE_TYPE": "City",
+    "POP_2010": 143986,
+    "COUNTY": "Larimer",
+    "COUNTYFIPS": "069",
+    "STATE": "CO",
+    "STATE_FIPS": "08",
+    "LATITUDE": 40.5852602,
+    "LONGITUDE": -105.084423,
+    "ELEV_IN_FT": 5003,
+    "IN_COLORADO_RIVER_BASIN": "No",
+    "HYDROLOGIC_BASIN": "South Platte (Missouri basin)",
+    "COLORADO_RIVER_WATER_SOURCE": "Colorado-Big Thompson Project transbasin diversion"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -105.084418879743,
+     40.5852549468163
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FID": 7,
+    "GNIS_ID": 1444661,
+    "ANSICODE": "2411499",
+    "NAME": "Provo",
+    "FEATURE_TYPE": "City",
+    "POP_2010": 112488,
+    "COUNTY": "Utah",
+    "COUNTYFIPS": "049",
+    "STATE": "UT",
+    "STATE_FIPS": "49",
+    "LATITUDE": 40.2338438,
+    "LONGITUDE": -111.6585337,
+    "ELEV_IN_FT": 4550,
+    "IN_COLORADO_RIVER_BASIN": "No",
+    "HYDROLOGIC_BASIN": "Great Basin (Utah Lake/Bonneville)",
+    "COLORADO_RIVER_WATER_SOURCE": "Central Utah Project transbasin diversion"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -111.658523690903,
+     40.2338353052247
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FID": 8,
+    "GNIS_ID": 204662,
+    "ANSICODE": "2410631",
+    "NAME": "Grand Junction",
+    "FEATURE_TYPE": "City",
+    "POP_2010": 58566,
+    "COUNTY": "Mesa",
+    "COUNTYFIPS": "077",
+    "STATE": "CO",
+    "STATE_FIPS": "08",
+    "LATITUDE": 39.0638705,
+    "LONGITUDE": -108.5506486,
+    "ELEV_IN_FT": 4593,
+    "IN_COLORADO_RIVER_BASIN": "Yes",
+    "HYDROLOGIC_BASIN": "Upper Colorado (Colorado River mainstem)",
+    "COLORADO_RIVER_WATER_SOURCE": "Direct from Colorado River drainage"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -108.55064026874,
+     39.06386626311
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FID": 9,
+    "GNIS_ID": 204798,
+    "ANSICODE": "2411501",
+    "NAME": "Pueblo",
+    "FEATURE_TYPE": "City",
+    "POP_2010": 106595,
+    "COUNTY": "Pueblo",
+    "COUNTYFIPS": "101",
+    "STATE": "CO",
+    "STATE_FIPS": "08",
+    "LATITUDE": 38.2544472,
+    "LONGITUDE": -104.609141,
+    "ELEV_IN_FT": 4692,
+    "IN_COLORADO_RIVER_BASIN": "No",
+    "HYDROLOGIC_BASIN": "Arkansas (Missouri basin)",
+    "COLORADO_RIVER_WATER_SOURCE": "Fry-Ark Project transbasin diversion"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -104.609138229221,
+     38.2544381025097
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FID": 10,
+    "GNIS_ID": 29046,
+    "ANSICODE": "2410509",
+    "NAME": "Flagstaff",
+    "FEATURE_TYPE": "City",
+    "POP_2010": 65870,
+    "COUNTY": "Coconino",
+    "COUNTYFIPS": "005",
+    "STATE": "AZ",
+    "STATE_FIPS": "04",
+    "LATITUDE": 35.1980671,
+    "LONGITUDE": -111.6512725,
+    "ELEV_IN_FT": 6903,
+    "IN_COLORADO_RIVER_BASIN": "Yes",
+    "HYDROLOGIC_BASIN": "Little Colorado River",
+    "COLORADO_RIVER_WATER_SOURCE": "Within Colorado River basin (Little Colorado tributary)"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -111.651265303407,
+     35.1980571546934
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FID": 11,
+    "GNIS_ID": 847388,
+    "ANSICODE": "2411630",
+    "NAME": "Las Vegas",
+    "FEATURE_TYPE": "City",
+    "POP_2010": 583756,
+    "COUNTY": "Clark",
+    "COUNTYFIPS": "003",
+    "STATE": "NV",
+    "STATE_FIPS": "32",
+    "LATITUDE": 36.1749705,
+    "LONGITUDE": -115.137223,
+    "ELEV_IN_FT": 2001,
+    "IN_COLORADO_RIVER_BASIN": "Yes",
+    "HYDROLOGIC_BASIN": "Lower Colorado (Las Vegas Wash to Lake Mead)",
+    "COLORADO_RIVER_WATER_SOURCE": "Lake Mead"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -115.137213696045,
+     36.1749644904986
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FID": 12,
+    "GNIS_ID": 1662328,
+    "ANSICODE": "2410877",
+    "NAME": "Los Angeles",
+    "FEATURE_TYPE": "City",
+    "POP_2010": 3792621,
+    "COUNTY": "Los Angeles",
+    "COUNTYFIPS": "037",
+    "STATE": "CA",
+    "STATE_FIPS": "06",
+    "LATITUDE": 34.0522342,
+    "LONGITUDE": -118.2436849,
+    "ELEV_IN_FT": 292,
+    "IN_COLORADO_RIVER_BASIN": "No",
+    "HYDROLOGIC_BASIN": "South Coast California",
+    "COLORADO_RIVER_WATER_SOURCE": "Colorado River Aqueduct (MWD) transbasin"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -118.243677780058,
+     34.0522270451214
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FID": 13,
+    "GNIS_ID": 44784,
+    "ANSICODE": "2411414",
+    "NAME": "Phoenix",
+    "FEATURE_TYPE": "City",
+    "POP_2010": 1445632,
+    "COUNTY": "Maricopa",
+    "COUNTYFIPS": "013",
+    "STATE": "AZ",
+    "STATE_FIPS": "04",
+    "LATITUDE": 33.4483771,
+    "LONGITUDE": -112.0740373,
+    "ELEV_IN_FT": 1086,
+    "IN_COLORADO_RIVER_BASIN": "Yes",
+    "HYDROLOGIC_BASIN": "Lower Colorado (Salt/Gila Rivers)",
+    "COLORADO_RIVER_WATER_SOURCE": "Central Arizona Project plus local rivers"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -112.07403044242,
+     33.4483705226743
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FID": 14,
+    "GNIS_ID": 6840,
+    "ANSICODE": "2411604",
+    "NAME": "Lake Havasu City",
+    "FEATURE_TYPE": "City",
+    "POP_2010": 52527,
+    "COUNTY": "Mohave",
+    "COUNTYFIPS": "015",
+    "STATE": "AZ",
+    "STATE_FIPS": "04",
+    "LATITUDE": 34.483901,
+    "LONGITUDE": -114.3224548,
+    "ELEV_IN_FT": 738,
+    "IN_COLORADO_RIVER_BASIN": "Yes",
+    "HYDROLOGIC_BASIN": "Lower Colorado (mainstem)",
+    "COLORADO_RIVER_WATER_SOURCE": "Lake Havasu"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -114.322450716501,
+     34.4838960735195
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FID": 15,
+    "GNIS_ID": 1454997,
+    "ANSICODE": "2411771",
+    "NAME": "Salt Lake City",
+    "FEATURE_TYPE": "City",
+    "POP_2010": 186440,
+    "COUNTY": "Salt Lake",
+    "COUNTYFIPS": "035",
+    "STATE": "UT",
+    "STATE_FIPS": "49",
+    "LATITUDE": 40.7607794,
+    "LONGITUDE": -111.8910474,
+    "ELEV_IN_FT": 4265,
+    "IN_COLORADO_RIVER_BASIN": "No",
+    "HYDROLOGIC_BASIN": "Great Basin (Jordan River/Great Salt Lake)",
+    "COLORADO_RIVER_WATER_SOURCE": "Central Utah Project transbasin diversion"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -111.891043619045,
+     40.760776299551
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FID": 16,
+    "GNIS_ID": 936823,
+    "ANSICODE": "2411821",
+    "NAME": "Santa Fe",
+    "FEATURE_TYPE": "City",
+    "POP_2010": 67947,
+    "COUNTY": "Santa Fe",
+    "COUNTYFIPS": "049",
+    "STATE": "NM",
+    "STATE_FIPS": "35",
+    "LATITUDE": 35.6869752,
+    "LONGITUDE": -105.937799,
+    "ELEV_IN_FT": 6995,
+    "IN_COLORADO_RIVER_BASIN": "No",
+    "HYDROLOGIC_BASIN": "Rio Grande",
+    "COLORADO_RIVER_WATER_SOURCE": "San Juan-Chama Project transbasin diversion"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -105.937791450198,
+     35.6869701911302
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FID": 17,
+    "GNIS_ID": 1661377,
+    "ANSICODE": "2411782",
+    "NAME": "San Diego",
+    "FEATURE_TYPE": "City",
+    "POP_2010": 1307402,
+    "COUNTY": "San Diego",
+    "COUNTYFIPS": "073",
+    "STATE": "CA",
+    "STATE_FIPS": "06",
+    "LATITUDE": 32.7153292,
+    "LONGITUDE": -117.1572551,
+    "ELEV_IN_FT": 62,
+    "IN_COLORADO_RIVER_BASIN": "No",
+    "HYDROLOGIC_BASIN": "South Coast California",
+    "COLORADO_RIVER_WATER_SOURCE": "Colorado River Aqueduct (MWD) and IID transfer"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -117.157246292291,
+     32.7153190098221
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FID": 18,
+    "GNIS_ID": 14111,
+    "ANSICODE": "2412328",
+    "NAME": "Yuma",
+    "FEATURE_TYPE": "City",
+    "POP_2010": 93064,
+    "COUNTY": "Yuma",
+    "COUNTYFIPS": "027",
+    "STATE": "AZ",
+    "STATE_FIPS": "04",
+    "LATITUDE": 32.7253249,
+    "LONGITUDE": -114.624397,
+    "ELEV_IN_FT": 141,
+    "IN_COLORADO_RIVER_BASIN": "Yes",
+    "HYDROLOGIC_BASIN": "Lower Colorado (mainstem)",
+    "COLORADO_RIVER_WATER_SOURCE": "Direct diversion from the Colorado River"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -114.624397,
+     32.7253249
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FID": 19,
+    "GNIS_ID": 43534,
+    "ANSICODE": "2412104",
+    "NAME": "Tucson",
+    "FEATURE_TYPE": "City",
+    "POP_2010": 520116,
+    "COUNTY": "Pima",
+    "COUNTYFIPS": "019",
+    "STATE": "AZ",
+    "STATE_FIPS": "04",
+    "LATITUDE": 32.2217429,
+    "LONGITUDE": -110.926479,
+    "ELEV_IN_FT": 2490,
+    "IN_COLORADO_RIVER_BASIN": "Yes",
+    "HYDROLOGIC_BASIN": "Lower Colorado (Santa Cruz River/Gila)",
+    "COLORADO_RIVER_WATER_SOURCE": "Central Arizona Project"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -110.926468599568,
+     32.2217341320912
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FID": 20,
+    "GNIS_ID": null,
+    "ANSICODE": null,
+    "NAME": "Imperial Irrigation District",
+    "FEATURE_TYPE": "Irrigation district",
+    "POP_2010": null,
+    "COUNTY": "Imperial",
+    "COUNTYFIPS": "025",
+    "STATE": "CA",
+    "STATE_FIPS": "06",
+    "LATITUDE": 32.9693997800579,
+    "LONGITUDE": -115.794160646474,
+    "ELEV_IN_FT": null,
+    "IN_COLORADO_RIVER_BASIN": "No",
+    "HYDROLOGIC_BASIN": "Salton Sea (closed basin)",
+    "COLORADO_RIVER_WATER_SOURCE": "All American Canal diversion from the Colorado River"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -115.794160646474,
+     32.9693997800579
+    ]
+   }
+  }
+ ]
+}
