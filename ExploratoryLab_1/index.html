@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Colorado River Basin</title>
+  <link href="https://cdn.jsdelivr.net/npm/maplibre-gl@5.24.0/dist/maplibre-gl.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/maplibre-gl@5.24.0/dist/maplibre-gl.js"></script>
+  <style>
+    body { margin: 0; }
+    #map { position: absolute; inset: 0; }
+
+    #legend {
+      position: absolute; bottom: 36px; left: 24px;
+      background: ivory; padding: 10px 14px; border-radius: 6px;
+      font: 13px sans-serif;
+    }
+    #legend div { margin: 4px 0; }
+    #legend span {
+      display: inline-block; width: 14px; height: 10px; margin-right: 8px;
+      vertical-align: middle; border: 1px solid rgba(0,0,0,0.3); box-sizing: border-box;
+    }
+    #legend .circle { width: 12px; height: 12px; border-radius: 50%; }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+
+  <!-- making legend -->
+  <div id="legend">
+    <div style="font-weight:bold; font-size:14px; margin-bottom:2px">Colorado River Basin: Flow, Cities, and Alfalfa</div>
+    <div style="font-size:11px; color:#555; margin-top:0; margin-bottom:8px">Mean flow at USGS stations, Apr to May 2026</div>
+    <div><span style="background:rgba(33,103,174,1)"></span>Colorado River</div>
+    <div><span style="background:rgba(39,133,228,1)"></span>Tributaries</div>
+    <div><span class="circle" style="background:#e07b2a"></span>Major city using Colorado River water</div>
+    <div><span class="circle" style="background:rgba(39,133,228,0.6); width:17px; height:17px"></span>Monitoring station</div>
+    <div style="font-size:11px; color:#555; margin-left:28px; margin-top:-2px">Larger circle = higher mean flow, Apr to May 2026<br>(cfs = cubic feet per second)</div>
+    <div><span style="background:#dcebd2"></span>Upper Colorado River Basin</div>
+    <div><span style="background:#86b872"></span>High annual levels of alfalfa production (upper basin)</div>
+    <div><span style="background:#f6d5cf"></span>Lower Colorado River Basin</div>
+    <div><span style="background:#7a1f1a"></span>High annual levels of alfalfa production (lower basin)</div>
+  </div>
+
+  <script>
+    const map = new maplibregl.Map({
+      container: 'map',
+      style: 'Colorado_River_Basin_Style.json',
+      center: [-110.95, 37.03],
+      zoom: 4.7
+    });
+    map.addControl(new maplibregl.NavigationControl());
+
+    // Popup when a station (blue circle) is clicked
+    map.on('click', 'monitering locations', (e) => {
+      const feature = e.features[0];
+      const p = feature.properties;
+
+      new maplibregl.Popup()
+        .setLngLat(feature.geometry.coordinates.slice())
+        .setHTML(`
+          <strong>${p.name}</strong><br>
+          Mean flow: ${Number(p.mean_cfs).toLocaleString()} cfs<br>
+          <small>${p.period}</small>
+        `)
+        .addTo(map);
+    });
+
+    // Pointer cursor over the circles
+    map.on('mouseenter', 'monitering locations', () => {
+      map.getCanvas().style.cursor = 'pointer';
+    });
+    map.on('mouseleave', 'monitering locations', () => {
+      map.getCanvas().style.cursor = '';
+    });
+  </script>
+</body>
+</html>
