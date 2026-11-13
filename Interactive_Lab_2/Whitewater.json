@@ -1,0 +1,17 @@
+{"type":"FeatureCollection","features":[
+{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-123.345279, 49.925229]}, "properties": {"Name": "Ashlu Creek - Play Run", "River": "Ashlu Creek", "Class": "III+ (IV-)", "ClassMin": 3, "ClassMax": 4, "Season": "Summer/Fall"}},
+{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-123.25578, 49.958447]}, "properties": {"Name": "Ashlu Creek - Mine Run", "River": "Ashlu Creek", "Class": "IV-V", "ClassMin": 4, "ClassMax": 5, "Season": "Fall"}},
+{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-127.754063, 55.647457]}, "properties": {"Name": "Big Rapid/Wave", "River": "Skeena", "Class": "III+-IV", "ClassMin": 3, "ClassMax": 4, "Season": "Summer"}},
+{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-121.866379, 49.7709]}, "properties": {"Name": "Big Silver Creek - Middle", "River": "Big Silver Creek", "Class": "V", "ClassMin": 5, "ClassMax": 5, "Season": "Spring"}},
+{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-122.980197, 51.729318]}, "properties": {"Name": "Big Creek - Lower", "River": "Big Silver Creek", "Class": "V+", "ClassMin": 5, "ClassMax": 5, "Season": "Spring"}},
+{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-122.729302, 50.34455]}, "properties": {"Name": "Birkenhead River - Lower", "River": "Birkenhead River", "Class": "III(+)", "ClassMin": 3, "ClassMax": 3, "Season": "Summer"}},
+{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-116.493355, 51.509215]}, "properties": {"Name": "Yoho", "River": "Yoho River", "Class": "V", "ClassMin": 5, "ClassMax": 5, "Season": "Fall"}},
+{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-117.398104, 50.145736]}, "properties": {"Name": "Fitzstubbs", "River": "Fitzstubbs Creek", "Class": "III-V", "ClassMin": 3, "ClassMax": 5, "Season": "Spring"}},
+{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-120.221642, 49.151711]}, "properties": {"Name": "Ashnola River", "River": "Ashnola River", "Class": "IV", "ClassMin": 4, "ClassMax": 4, "Season": "Spring"}},
+{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-117.715691, 51.693992]}, "properties": {"Name": "Kinbasket Canyon", "River": "Beaver River", "Class": "IV/IV+", "ClassMin": 4, "ClassMax": 4, "Season": "Early Spring"}},
+{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-116.94219, 51.299073]}, "properties": {"Name": "Kicking Horse - Lower Canyon", "River": "Kicking Horse River", "Class": "III-IV", "ClassMin": 3, "ClassMax": 4, "Season": "Summer"}},
+{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-116.975969, 51.475389]}, "properties": {"Name": "Blaeberry River", "River": "Blaeberry River", "Class": "III-IV", "ClassMin": 3, "ClassMax": 4, "Season": "Summer"}},
+{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-118.037554, 51.025544]}, "properties": {"Name": "Illecillewaet River", "River": "Illecillewaet River", "Class": "III-IV", "ClassMin": 3, "ClassMax": 4, "Season": "Summer"}},
+{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-114.900303, 49.707915]}, "properties": {"Name": "Elk River - Fernie", "River": "Elk River", "Class": "II-III", "ClassMin": 2, "ClassMax": 3, "Season": "Summer"}},
+{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-128.168239, 58.212056]}, "properties": {"Name": "Tuchodi River", "River": "Tuchodi River", "Class": "II-III", "ClassMin": 2, "ClassMax": 3, "Season": "Summer"}}
+]}

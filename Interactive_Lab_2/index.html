@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Whitewater Locations in BC</title>
+    <meta charset='utf-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel='stylesheet' href='https://unpkg.com/maplibre-gl@6.16.0/dist/maplibre-gl.css' />
+
+    <!-- Adapted from Turf Stanley Park waterfountain example  -->
+    <script src="https://cdn.jsdelivr.net/npm/@turf/turf@7.4.0/turf.min.js"></script>
+
+    <style>
+        body { margin: 0; padding: 0; }
+        html, body, #map { height: 100%; }
+        #controls {
+            position: absolute; bottom: 30px; left: 30px; z-index: 1;
+            background: white; padding: 10px; border-radius: 4px;
+            font-family: sans-serif;
+        }
+    </style>
+
+    <!-- styles for the title and legend -->
+    <style>
+        #title {
+            position: absolute; top: 15px; left: 15px; z-index: 1;
+            background: white; padding: 8px 14px; border-radius: 4px;
+            font-family: sans-serif; pointer-events: none;
+        }
+        #title h1 { margin: 0; font-size: 18px; }
+        #title p { margin: 2px 0 0; font-size: 12px; color: #555; }
+
+        #legend {
+            position: absolute; bottom: 30px; right: 10px; z-index: 1;
+            background: white; padding: 10px; border-radius: 4px;
+            font-family: sans-serif; font-size: 13px;
+        }
+        #legend h2 { margin: 0 0 6px; font-size: 14px; }
+        .legend-row { display: flex; align-items: center; margin-top: 4px; }
+        .swatch { width: 14px; height: 14px; margin-right: 8px; flex-shrink: 0; box-sizing: border-box; }
+        .swatch.dot { border-radius: 50%; border: 2px solid #fff; box-shadow: 0 0 0 1px #999; }
+        .swatch.line { height: 3px; }
+    </style>
+</head>
+<body>
+<div id="map"></div>
+
+<div id="controls">
+
+    <!-- Class and Season dropdowns adapted from the class UBC trees example -->
+
+    <div>
+        <label>Class/Rating:
+            <select id="classSelect">
+                <option value="">All classes</option>
+                <!-- CHANGED: added Class I and Class VI so every class can be selected -->
+                <option value="1">I</option>
+                <option value="2">II</option>
+                <option value="3">III</option>
+                <option value="4">IV</option>
+                <option value="5">V</option>
+                <option value="6">VI</option>
+            </select>
+        </label>
+    </div>
+    <div style="margin-top: 8px;">
+        <label>Season:
+            <select id="seasonSelect">
+                <option value="">All seasons</option>
+                <option value="Spring">Spring</option>
+                <option value="Summer">Summer</option>
+                <option value="Fall">Fall</option>
+            </select>
+        </label>
+    </div>
+
+    <!-- Adapted from Stanley Park Turf example -->
+    <div style="margin-top: 8px;">
+        <label>Distance from airport: <span id="airportLabel">0</span> km (0 = off)<br>
+            <input type="range" id="airportSlider" min="0" max="300" step="10" value="0">
+        </label>
+    </div>
+    <div style="margin-top: 8px;">
+        <label>Distance from highway: <span id="highwayLabel">0</span> km (0 = off)<br>
+            <input type="range" id="highwaySlider" min="0" max="100" step="5" value="0">
+        </label>
+    </div>
+
+    <div id="resultText" style="margin-top: 6px; font-size: 13px; max-width: 260px;"></div>
+
+    <div style="margin-top: 8px;">
+        <button id="showAllButton">Reset</button>
+    </div>
+</div>
+
+<!-- map title -->
+<div id="title">
+    <h1>Whitewater Locations in BC</h1>
+    <p>Finding new rafting and kayaking options by class, season and access</p>
+</div>
+
+<!-- map legend (swatch colors match the paint values in the script below) -->
+<div id="legend">
+    <h2>Legend</h2>
+    <div class="legend-row"><span class="swatch dot" style="background:#0000FF"></span>Whitewater Attraction Points</div>
+    <div class="legend-row"><span class="swatch dot" style="background:#e66101"></span>Rapid meeting all filters</div>
+<div class="legend-row"><span class="swatch dot" style="background:#000000; width:8px; height:8px; margin:0 11px 0 3px; border-width:1px"></span>Airport</div>    <div class="legend-row"><span class="swatch line" style="background:#7f3b08"></span>Highway</div>
+    <div class="legend-row"><span class="swatch" style="background:rgba(255,217,47,0.4); border:1px solid #b8860b"></span>Airport distance zone</div>
+    <div class="legend-row"><span class="swatch" style="background:rgba(140,81,10,0.25)"></span>Highway distance zone</div>
+    <div class="legend-row"><span class="swatch" style="background:rgba(0,0,0,0.1); border:1px solid #999"></span>BC boundary</div>
+</div>
+
+<script type="module">
+    import * as maplibregl from 'https://unpkg.com/maplibre-gl@6.16.0/dist/maplibre-gl.mjs';
+
+    // Imported Maplibre Americana style Map
+    const map = new maplibregl.Map({
+        container: 'map',
+        style: 'https://americanamap.org/style.json', 
+        center: [-129.7695214, 54.5914269], //Centered to show all of BC
+        zoom: 4.5
+    });
+
+    // Paint for the whitewater points (adapted from the class UBC trees sketch)
+   const rapidMarkerPaint = {
+    'circle-radius': ['interpolate', ['linear'], ['zoom'], 4, 8, 12, 16],
+    'circle-color': '#0000FF',
+    'circle-opacity': 1,
+    'circle-stroke-color': '#FFFFFF',
+    'circle-stroke-width': 2
+};
+
+    // Adapted from the stanley park example, the rapids that meet the distances are drawn again on top in orange 
+    const rapidWithinPaint = {
+        'circle-radius': ['interpolate', ['linear'], ['zoom'], 4, 6, 12, 11],
+        'circle-color': '#e66101',
+        'circle-stroke-color': '#FFFFFF',
+        'circle-stroke-width': 1
+    };
+
+    // runs when a rapid is clicked.
+    // shows the name, river, class, season, and the distances to the nearest airport and highway.
+    function onEachRapid(e) {
+        const rapid = e.features[0].properties;
+        new maplibregl.Popup()
+            .setLngLat(e.lngLat)
+            .setHTML(
+                '<strong>' + rapid.Name + '</strong><br>' +
+                'River: ' + rapid.River + '<br>' +
+                'Class: ' + rapid.Class + '<br>' +
+                'Season: ' + rapid.Season + '<br>' +
+                'Nearest airport: ' + rapid.NearestAirport + ' (' + rapid.AirportKm + ' km)<br>' +
+                'Nearest highway: ' + rapid.HighwayKm + ' km<br>' +
+                '<em>Straight-line distances</em>'
+            )
+            .addTo(map);
+    }
+
+    // Adapted from the highlight the trees example in class, testing the Class and Season dropdowns, and setting the filter on the rapids layers.
+    // the filter is set on both rapid layers (all rapids, and the orange within rapids).
+    function applyFilters() {
+        const classValue = document.getElementById('classSelect').value;
+        const season = document.getElementById('seasonSelect').value;
+        const conditions = [];
+
+        if (classValue !== '') {
+            const n = Number(classValue);
+            conditions.push(['<=', ['get', 'ClassMin'], n]);
+            conditions.push(['>=', ['get', 'ClassMax'], n]);
+        }
+        if (season !== '') {
+            conditions.push(['in', season, ['get', 'Season']]);
+        }
+
+        const filter = conditions.length === 0 ? null : ['all', ...conditions];
+        map.setFilter('Whitewater', filter);
+        map.setFilter('Whitewater-within', filter);
+    }
+
+    // Same test as applyFilters, but returns true/false for a rapid feature
+    function matchesDropdowns(f) {
+        const c = document.getElementById('classSelect').value;
+        const s = document.getElementById('seasonSelect').value;
+        const p = f.properties;
+        const okClass = c === '' || (p.ClassMin <= Number(c) && p.ClassMax >= Number(c));
+        const okSeason = s === '' || p.Season.includes(s);
+        return okClass && okSeason;
+    }
+
+    // Adapted from the stanley park example, using fetch() and await to read the data files.
+    map.on('load', async () => {
+
+        let rapidsData, airportsData, highwaysData;
+        try {
+            [rapidsData, airportsData, highwaysData] = await Promise.all([
+                fetch('Whitewater.json').then(r => r.json()),
+                fetch('Airports.json').then(r => r.json()),
+                fetch('Highways.json').then(r => r.json())
+            ]);
+        } catch (err) {
+            console.error('Could not load a data file:', err);
+            return;
+        }
+        console.log(rapidsData.features.length + ' rapids, ' + airportsData.features.length +
+                    ' airports, ' + highwaysData.features.length + ' highway features');
+
+        // Give every rapid an id, so the buffer results can be matched back to the rapids.
+        rapidsData.features.forEach((f, i) => { f.properties.RapidID = i; });
+
+        // using turf.nearestPoint and turf.distnace 
+        // For each rapid, find the nearest airport and the straight-line distance to it, in km.
+        rapidsData.features.forEach(f => {
+            const nearest = turf.nearestPoint(f, airportsData);
+            f.properties.NearestAirport = nearest.properties.Name;
+            f.properties.AirportKm = Math.round(turf.distance(f, nearest, { units: 'kilometers' }));
+        });
+
+        // using turf.flatten and turf.pointToLineDistance.
+        // turning splits any MultiLineString into single lines. 
+        // pointToLineDistance measures from each rapid to each highway line, and the smallest distance is kept.
+        const highwayLines = turf.flatten(highwaysData).features
+            .filter(l => l.geometry && l.geometry.type === 'LineString');
+        rapidsData.features.forEach(f => {
+            let min = Infinity;
+            highwayLines.forEach(line => {
+                const d = turf.pointToLineDistance(f, line, { units: 'kilometers' });
+                if (d < min) min = d;
+            });
+            f.properties.HighwayKm = Math.round(min * 10) / 10;
+        });
+
+        //Layers: 
+        // 1. BC boundary (bottom) from StatsCan
+        map.addSource('BC_Boundaries', { type: 'geojson', data: 'BC_Boundaries.json' });
+        map.addLayer({
+            id: 'BC_Boundaries',
+            type: 'fill',
+            source: 'BC_Boundaries',
+            paint: { 'fill-color': '#000000', 'fill-opacity': 0.1 }
+        });
+
+        // Adapted stanley park example. 
+        // The buffer sources start empty (turf.featureCollection([])) and then use updateAccess() to put the buffers in them. 
+        // They are added before the lines and points so MapLibre draws the lines and points on top.
+        map.addSource('highway-buffers', { type: 'geojson', data: turf.featureCollection([]) });
+        map.addLayer({
+            id: 'highway-buffers-fill', type: 'fill', source: 'highway-buffers',
+            paint: { 'fill-color': '#8c510a', 'fill-opacity': 0.15 }
+        });
+        map.addSource('airport-buffers', { type: 'geojson', data: turf.featureCollection([]) });
+        map.addLayer({
+            id: 'airport-buffers-fill', type: 'fill', source: 'airport-buffers',
+            paint: { 'fill-color': '#ffd92f', 'fill-opacity': 0.25 }
+        });
+        map.addLayer({
+            id: 'airport-buffers-line', type: 'line', source: 'airport-buffers',
+            paint: { 'line-color': '#b8860b', 'line-width': 1 }
+        });
+
+        // Adapted from the stanley park sketch 
+        // the highways are the lines that the buffers are made around. 
+        map.addSource('Highways', {
+            type: 'geojson',
+            data: highwaysData,
+        });
+        map.addLayer({
+            id: 'Highways', type: 'line', source: 'Highways',
+            paint: { 'line-color': '#7f3b08', 'line-width': 1.5, 'line-opacity': 0.8 }
+        });
+
+        // Airports are the balck points that the airport buffers are made around.
+        map.addSource('Airports', {
+            type: 'geojson',
+            data: airportsData,
+        });
+        map.addLayer({
+            id: 'Airports', type: 'circle', source: 'Airports',
+            paint: { 'circle-radius': 4, 'circle-color': '#000000',
+                     'circle-stroke-color': '#ffffff', 'circle-stroke-width': 1 }
+        });
+
+        // All whitewater attraction points, drawn in blue 
+        map.addSource('Whitewater', {
+            type: 'geojson',
+            data: rapidsData,
+        });
+        map.addLayer({
+            id: 'Whitewater',
+            type: 'circle',
+            source: 'Whitewater',
+            paint: rapidMarkerPaint
+        });
+
+        // Adapted form the Stanley Park example 
+        // the rapids that meet the distances are drawn again on top in orange.
+        map.addSource('within', { type: 'geojson', data: turf.featureCollection([]) });
+        map.addLayer({
+            id: 'Whitewater-within',
+            type: 'circle',
+            source: 'within',
+            paint: rapidWithinPaint
+        });
+
+        // only the layer with ALL the rapids has a click function so a click on any rapid (also an orange one) opens one popup.
+        map.on('click', 'Whitewater', onEachRapid);
+        map.on('mouseenter', 'Whitewater', () => map.getCanvas().style.cursor = 'pointer');
+        map.on('mouseleave', 'Whitewater', () => map.getCanvas().style.cursor = '');
+
+        const airportSlider = document.getElementById('airportSlider');
+        const highwaySlider = document.getElementById('highwaySlider');
+
+        // Adapted from the Stanley Park example; making the buffers for the sliders' distances,
+        // finds the rapids inside them, and draws the buffers and the orange rapids again.
+        // every buffer that is switched on (0 means off).
+
+        function updateAccess() {
+            const airKm = Number(airportSlider.value);
+            const hwyKm = Number(highwaySlider.value);
+            document.getElementById('airportLabel').textContent = airKm;
+            document.getElementById('highwayLabel').textContent = hwyKm;
+
+            // Start with every rapid that matches the Class and Season dropdowns.
+            let passing = rapidsData.features.filter(matchesDropdowns);
+            const total = passing.length;
+
+            if (airKm === 0 && hwyKm === 0) {
+                // Both sliders off: no buffers, no orange rapids.
+                map.getSource('airport-buffers').setData(turf.featureCollection([]));
+                map.getSource('highway-buffers').setData(turf.featureCollection([]));
+                map.getSource('within').setData(turf.featureCollection([]));
+                document.getElementById('resultText').textContent = '';
+                return;
+            }
+
+            // adapting stanley park example 
+            // making a polygon around each airport (points) or highway line (distance in km).
+            // turf.pointsWithinPolygon() keeps the rapids inside it. 
+            let airBuffers = turf.featureCollection([]);
+            let hwyBuffers = turf.featureCollection([]);
+
+            if (airKm > 0) {
+                airBuffers = turf.buffer(airportsData, airKm, { units: 'kilometers' });
+                const inside = turf.pointsWithinPolygon(turf.featureCollection(passing), airBuffers);
+                const ids = new Set(inside.features.map(f => f.properties.RapidID));
+                passing = passing.filter(f => ids.has(f.properties.RapidID));
+            }
+            if (hwyKm > 0) {
+                hwyBuffers = turf.buffer(highwaysData, hwyKm, { units: 'kilometers' });
+                const inside = turf.pointsWithinPolygon(turf.featureCollection(passing), hwyBuffers);
+                const ids = new Set(inside.features.map(f => f.properties.RapidID));
+                passing = passing.filter(f => ids.has(f.properties.RapidID));
+            }
+
+            // giving sources new data. MapLibre draws the source's layers again.
+            map.getSource('airport-buffers').setData(airBuffers);
+            map.getSource('highway-buffers').setData(hwyBuffers);
+            map.getSource('within').setData(turf.featureCollection(passing));
+
+            // adapted from stanley park example; writing the distances and the count on the page 
+            let text = passing.length + ' of ' + total + ' rapids (orange) are within ';
+            if (airKm > 0) text += airKm + ' km of an airport';
+            if (airKm > 0 && hwyKm > 0) text += ' and ';
+            if (hwyKm > 0) text += hwyKm + ' km of a highway';
+            document.getElementById('resultText').textContent = text + '.';
+        }
+
+        // adapted from the stanley park example; 'input' happens each time a slider moves
+        airportSlider.addEventListener('input', updateAccess);
+        highwaySlider.addEventListener('input', updateAccess);
+
+        // The dropdowns re-filter the map and update the count.
+        document.getElementById('classSelect').addEventListener('change', () => { applyFilters(); updateAccess(); });
+        document.getElementById('seasonSelect').addEventListener('change', () => { applyFilters(); updateAccess(); });
+
+        // Reset puts both dropdowns and both sliders back to their starting values.
+        document.getElementById('showAllButton').addEventListener('click', () => {
+            document.getElementById('classSelect').value = '';
+            document.getElementById('seasonSelect').value = '';
+            airportSlider.value = 0;
+            highwaySlider.value = 0;
+            applyFilters();
+            updateAccess();
+        });
+    });
+
+    map.addControl(new maplibregl.NavigationControl());
+</script>
+</body>
+</html>
